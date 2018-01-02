@@ -8,18 +8,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.github.irshulx.Editor;
+import com.github.irshulx.models.EditorTextStyle;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.github.mthli.knife.KnifeText;
 import ke.co.toshngure.gikosh.R;
 
 public class EditorActivity extends BaseActivity {
 
     public static final String EXTRA_TEXT = "extra_text";
 
-    @BindView(R.id.knifeEditor)
-    KnifeText knifeEditor;
+    @BindView(R.id.textEditor)
+    Editor textEditor;
+
+    public static void start(Activity activity, int requestCode, @Nullable String html) {
+        Intent starter = new Intent(activity, EditorActivity.class);
+        starter.putExtra(EXTRA_TEXT, html);
+        activity.startActivityForResult(starter, requestCode);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +37,16 @@ public class EditorActivity extends BaseActivity {
 
         if (getIntent().getExtras() != null) {
             String text = getIntent().getExtras().getString(EXTRA_TEXT);
-            knifeEditor.setText(text);
+            if (text != null) {
+                textEditor.render(text);
+            }
         }
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+        textEditor.setDividerLayout(R.layout.editor_divider);
+        textEditor.setListItemLayout(R.layout.editor_list_item);
+        textEditor.render();
 
-    public static void start(Activity activity, int requestCode, @Nullable String text) {
-        Intent starter = new Intent(activity, EditorActivity.class);
-        starter.putExtra(EXTRA_TEXT, text);
-        activity.startActivityForResult(starter, requestCode);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -58,7 +66,7 @@ public class EditorActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.action_done:
                 Intent data = new Intent();
-                data.putExtra(EXTRA_TEXT, knifeEditor.toHtml());
+                data.putExtra(EXTRA_TEXT, textEditor.getContentAsHTML());
                 setResult(Activity.RESULT_OK, data);
                 this.finish();
                 return true;
@@ -67,32 +75,29 @@ public class EditorActivity extends BaseActivity {
         }
     }
 
-    @OnClick({R.id.unorderedListBtn, R.id.orderedListBtn, R.id.boldBtn, R.id.italicBtn, R.id.underlineBtn, R.id.justifyLeftBtn, R.id.justifyRightBtn, R.id.indentBtn, R.id.outdentBtn, R.id.undoBtn, R.id.redoBtn})
+    @OnClick({R.id.boldBtn, R.id.italicBtn, R.id.alignLeftBtn, R.id.alignRightBtn, R.id.dividerBtn,
+            R.id.unorderedListBtn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.unorderedListBtn:
-                knifeEditor.bullet(knifeEditor.contains(KnifeText.FORMAT_BULLET));
-                break;
-            case R.id.orderedListBtn:
-                break;
             case R.id.boldBtn:
+                textEditor.updateTextStyle(EditorTextStyle.BOLD);
                 break;
             case R.id.italicBtn:
+                textEditor.updateTextStyle(EditorTextStyle.ITALIC);
                 break;
-            case R.id.underlineBtn:
+            case R.id.alignLeftBtn:
+                textEditor.updateTextStyle(EditorTextStyle.INDENT);
                 break;
-            case R.id.justifyLeftBtn:
+            case R.id.alignRightBtn:
+                textEditor.updateTextStyle(EditorTextStyle.OUTDENT);
                 break;
-            case R.id.justifyRightBtn:
+            case R.id.dividerBtn:
+                textEditor.insertDivider();
                 break;
-            case R.id.indentBtn:
-                break;
-            case R.id.outdentBtn:
-                break;
-            case R.id.undoBtn:
-                break;
-            case R.id.redoBtn:
+            case R.id.unorderedListBtn:
+                textEditor.insertList(false);
                 break;
         }
     }
+
 }

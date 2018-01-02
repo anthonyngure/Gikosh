@@ -21,95 +21,84 @@
             android:id="@+id/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/black">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/list_row_padding">
-
-                <ImageButton
-                    android:id="@+id/unorderedListBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_list_bulleted_black_24dp"/>
+                android:layout_height="wrap_content">
 
 
-                <ImageButton
-                    android:id="@+id/boldBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_bold_black_24dp"/>
+                <FrameLayout style="@style/EditorImageButtonContainer">
 
-                <ImageButton
-                    android:id="@+id/italicBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_italic_black_24dp"/>
+                    <ImageButton
+                        android:id="@+id/boldBtn"
+                        style="@style/EditorImageButton"
+                        android:src="@drawable/ic_format_bold_black_24dp" />
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/underlineBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_underlined_black_24dp"/>
+                <FrameLayout style="@style/EditorImageButtonContainer">
 
-                <ImageButton
-                    android:id="@+id/justifyLeftBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_align_left_black_24dp"/>
+                    <ImageButton
+                        android:id="@+id/italicBtn"
+                        style="@style/EditorImageButton"
+                        android:src="@drawable/ic_format_italic_black_24dp" />
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/justifyRightBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_align_right_black_24dp"/>
+                <FrameLayout style="@style/EditorImageButtonContainer">
 
-                <ImageButton
-                    android:id="@+id/indentBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_indent_increase_black_24dp"/>
+                    <ImageButton
+                        android:id="@+id/alignLeftBtn"
+                        style="@style/EditorImageButton"
+                        android:src="@drawable/ic_format_align_left_black_24dp" />
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/outdentBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_format_indent_decrease_black_24dp"/>
+                <FrameLayout style="@style/EditorImageButtonContainer">
 
-                <ImageButton
-                    android:id="@+id/undoBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_undo_black_24dp"/>
+                    <ImageButton
+                        android:id="@+id/alignRightBtn"
+                        style="@style/EditorImageButton"
+                        android:src="@drawable/ic_format_align_right_black_24dp" />
+                </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/redoBtn"
-                    style="@style/EditorImageButton"
-                    android:src="@drawable/ic_redo_black_24dp"/>
+                <FrameLayout style="@style/EditorImageButtonContainer">
+
+                    <ImageButton
+                        android:id="@+id/dividerBtn"
+                        style="@style/EditorImageButton"
+                        android:src="@drawable/ic_border_bottom_black_24dp" />
+                </FrameLayout>
+
+                <FrameLayout style="@style/EditorImageButtonContainer">
+
+                    <ImageButton
+                        android:id="@+id/unorderedListBtn"
+                        style="@style/EditorImageButton"
+                        android:src="@drawable/ic_format_list_bulleted_black_24dp" />
+                </FrameLayout>
+
 
 
             </LinearLayout>
 
         </HorizontalScrollView>
 
-        <io.github.mthli.knife.KnifeText
-            android:id="@+id/knifeEditor"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
             android:layout_above="@id/tools"
-            android:paddingTop="16dp"
-            android:paddingLeft="16dp"
-            android:paddingStart="16dp"
-            android:paddingRight="16dp"
-            android:paddingEnd="16dp"
-            android:gravity="top|start"
-            android:scrollbars="vertical"
-            android:background="@android:color/transparent"
-            app:bulletColor="@color/blue_500"
-            app:bulletRadius="@dimen/bullet_radius"
-            app:bulletGapWidth="@dimen/bullet_gap_width"
-            app:historyEnable="true"
-            app:historySize="99"
-            app:linkColor="@color/blue_500"
-            app:linkUnderline="true"
-            app:quoteColor="@color/blue_500"
-            app:quoteStripeWidth="@dimen/quote_stripe_width"
-            app:quoteCapWidth="@dimen/quote_gap_width">
-        </io.github.mthli.knife.KnifeText>
+            android:layout_alignParentTop="true"
+            android:scrollbars="vertical">
+
+            <com.github.irshulx.Editor
+                android:id="@+id/textEditor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/list_row_padding"
+                app:placeholder="Start writing here..."
+                app:render_type="Editor" />
+        </ScrollView>
+
 
     </RelativeLayout>
 

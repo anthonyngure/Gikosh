@@ -177,5 +177,6 @@
     <string name="next">Next</string>
     <string name="no_brand_added">No brand added</string>
     <string name="title_activity_editor">Description</string>
+    <string name="bullet">•</string>
 
 </resources>

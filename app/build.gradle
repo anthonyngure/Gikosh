@@ -67,7 +67,7 @@ dependencies {
     implementation 'com.getbase:floatingactionbutton:1.10.1'
     implementation 'com.github.adroitandroid:ChipCloud:2.2.1'
     implementation 'com.google.android:flexbox:0.3.1'
-    implementation 'com.github.mthli:Knife:v1.1'
+    implementation 'com.github.irshulx:laser-native-editor:2.1.0'
 
 
     testImplementation 'junit:junit:4.12'

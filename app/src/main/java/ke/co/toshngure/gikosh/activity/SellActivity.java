@@ -5,12 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.text.Html;
 import android.view.View;
-import android.widget.TextView;
 
 import com.adroitandroid.chipcloud.ChipCloud;
 import com.adroitandroid.chipcloud.ChipListener;
+import com.github.irshulx.Editor;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import butterknife.BindView;
@@ -39,8 +38,8 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
     MaterialEditText nameMET;
     @BindView(R.id.priceMET)
     MaterialEditText priceMET;
-    @BindView(R.id.descriptionTV)
-    TextView descriptionTV;
+    @BindView(R.id.descriptionRenderer)
+    Editor descriptionRenderer;
     @BindView(R.id.imagePicker1)
     ImagePicker imagePicker1;
     @BindView(R.id.imagePicker2)
@@ -60,6 +59,11 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
     private Category mCategory;
     private SelectCategoryFragment mSelectCategoryFragment;
 
+    public static void start(Context context, Category category) {
+        Intent starter = new Intent(context, SellActivity.class);
+        starter.putExtra(EXTRA_CATEGORY, category);
+        context.startActivity(starter);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,10 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
 
         priceMET.addValidator(BaseUtils.createRequiredValidator(getString(R.string.error_field_is_required)));
         BaseUtils.cacheInput(priceMET, R.string.hint_item_price, PrefUtils.getInstance());
+
+        descriptionRenderer.setDividerLayout(R.layout.editor_divider);
+        descriptionRenderer.setListItemLayout(R.layout.editor_list_item);
+        descriptionRenderer.render();
 
         imagePicker1.setActivity(this, IMAGE_ONE_REQUEST, true);
         imagePicker2.setActivity(this, IMAGE_TWO_REQUEST);
@@ -131,15 +139,9 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public static void start(Context context, Category category) {
-        Intent starter = new Intent(context, SellActivity.class);
-        starter.putExtra(EXTRA_CATEGORY, category);
-        context.startActivity(starter);
-    }
-
-    @OnClick(R.id.descriptionLL)
+    @OnClick(R.id.descriptionRenderer)
     public void writeDescription(View view) {
-       EditorActivity.start(this, DESCRIPTION_REQUEST, descriptionTV.getText().toString());
+        EditorActivity.start(this, DESCRIPTION_REQUEST, descriptionRenderer.getContentAsHTML());
     }
 
 
@@ -150,7 +152,7 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
             if (data.getExtras() != null){
                 String desc = data.getExtras().getString(EditorActivity.EXTRA_TEXT);
                 if (desc != null){
-                    descriptionTV.setText(Html.fromHtml(desc.trim()));
+                    descriptionRenderer.render(desc.trim());
                 }
             }
         } else {
@@ -168,11 +170,11 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
                 Item item = new Item();
                 item.setName(nameMET.getText().toString());
                 item.setPrice(Double.parseDouble(priceMET.getText().toString()));
-                item.setDescription(descriptionTV.getText().toString());
+                item.setDescription(descriptionRenderer.getContentAsHTML());
                 ItemActivity.start(this, mCategory, item);
             } else {
                 toast(R.string.error_photo);
-                Snackbar.make(descriptionTV, R.string.error_photo, Snackbar.LENGTH_INDEFINITE)
+                Snackbar.make(nameMET, R.string.error_photo, Snackbar.LENGTH_INDEFINITE)
                         .setAction(R.string.ok, view -> {
                         }).show();
             }

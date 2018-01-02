@@ -24,17 +24,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/list_row_padding"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/list_row_padding">
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/list_row_padding"
                     android:text="@string/add_your_item_photos"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="@dimen/list_row_padding"/>
+                    android:textStyle="bold" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -77,11 +77,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/list_row_padding"
+                android:layout_marginStart="@dimen/list_row_padding"
                 android:text="@string/add_your_item_details"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textStyle="bold"
-                android:layout_marginLeft="@dimen/list_row_padding"
-                android:layout_marginStart="@dimen/list_row_padding"/>
+                android:textStyle="bold" />
 
             <android.support.v7.widget.CardView
                 style="@style/CardViewContainer">
@@ -94,44 +94,34 @@
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/nameMET"
                         style="@style/METProductDetails"
+                        android:hint="@string/hint_item_name"
                         android:inputType="text|textCapSentences"
                         android:maxLines="1"
-                        android:hint="@string/hint_item_name"
                         app:met_helperText="@string/helper_item_name"/>
 
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/priceMET"
                         style="@style/METProductDetails"
-                        android:inputType="phone"
-                        android:hint="@string/hint_item_price"
                         android:layout_marginBottom="@dimen/list_row_padding"
+                        android:hint="@string/hint_item_price"
+                        android:inputType="phone"
                         app:met_helperText="@string/helper_item_price"/>
 
                     <TextView
                         style="@style/Heading"
-                        android:text="@string/description"
-                        android:layout_marginBottom="0dp"/>
+                        android:layout_marginBottom="0dp"
+                        android:text="@string/description" />
 
-                    <LinearLayout
-                        android:id="@+id/descriptionLL"
+
+                    <com.github.irshulx.Editor
+                        android:id="@+id/descriptionRenderer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="?attr/selectableItemBackground"
                         android:layout_marginBottom="@dimen/list_row_padding"
-                        android:paddingTop="@dimen/list_row_padding"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/descriptionTV"
-                            style="@style/Body"
-                            android:minHeight="?attr/actionBarSize"
-                            android:gravity="center_vertical"
-                            android:text="@string/helper_item_description"
-                            android:layout_marginBottom="@dimen/list_row_padding"/>
-
-                        <include layout="@layout/horizontal_separator"/>
-
-                    </LinearLayout>
+                        android:minHeight="?attr/actionBarSize"
+                        android:padding="@dimen/list_row_padding"
+                        app:placeholder="@string/helper_item_description"
+                        app:render_type="Renderer" />
 
                     <include layout="@layout/layout_specifications"/>
 
@@ -140,9 +130,9 @@
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/preview"
+                        android:layout_gravity="end"
                         android:layout_marginTop="@dimen/list_row_padding"
-                        android:layout_gravity="end"/>
+                        android:text="@string/preview" />
 
                 </LinearLayout>
 

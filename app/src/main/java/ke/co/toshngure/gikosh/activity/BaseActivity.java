@@ -246,7 +246,7 @@ public class BaseActivity extends BaseAppActivity implements ConnectionListener 
                 TestActivity.start(this);
                 return true;
             case R.id.action_cart:
-                TestActivity.start(this);
+                EditorActivity.start(this, 222, null);
                 return true;
             case R.id.action_sign_out:
                 signOut();
