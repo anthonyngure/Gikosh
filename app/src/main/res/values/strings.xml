@@ -1,0 +1,181 @@
+<resources>
+    <string name="app_name">Gikosh</string>
+
+    <string name="facebook_app_id">548656572138807</string>
+    <string name="fb_login_protocol_scheme">fb548656572138807</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="pref_user">user</string>
+    <string name="get_started">Get Started</string>
+    <string name="sign_up_with_phone">Sign Up With Phone</string>
+    <string name="or">OR</string>
+    <string name="pref_facebook_user">facebook_user</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_email">Your Email</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_phone">Your Phone</string>
+    <string name="privacy_policy_warning">By registering you confirm that you accept our <![CDATA[<b><font color=#FF4081>Terms of Use</b>]]> and <![CDATA[<b><font color=#FF4081>Privacy Policy</b>]]>.</string>
+    <string name="have_an_account_sign_in">Have an account? <![CDATA[<b><font color=#FF4081>Sign In</b>]]></string>
+    <string name="helper_email">Email is optional</string>
+    <string name="helper_phone">You will be sent a verification code</string>
+    <string name="first_name">first_name</string>
+    <string name="last_name">last_name</string>
+    <string name="email">email</string>
+    <string name="phone">phone</string>
+    <string name="confirm_password">confirm_password</string>
+    <string name="password">password</string>
+    <string name="error_field_is_required">This field is required!</string>
+    <string name="error_phone">Please use a valid phone number!</string>
+    <string name="error_email">Please use a valid email address!</string>
+    <string name="error_password">Passwords do not match!</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_with_facebook">Sign In With Facebook</string>
+    <string name="continue_as">Continue as %1$s</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="action_cart">Cart</string>
+    <string name="title_activity_sell">Sell on Gikosh</string>
+    <string name="title_activity_hunt">Hunt on Gikosh</string>
+    <string name="bottom_sheet_behavior_google_maps_like">ke.co.toshngure.gikosh.behaviours.BottomSheetBehaviorGoogleMapsLike</string>
+    <string name="scroll_aware_fab_behavior">ke.co.toshngure.gikosh.behaviours.ScrollAwareFABBehavior</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="photo">Photo</string>
+    <string name="video">Video</string>
+    <string name="add_a_photo">Add a photo</string>
+    <string name="add_a_photo_required">Add a photo(<![CDATA[<b><font color=#FF0000>required</b>]]>)</string>
+    <string name="add_your_item_photos">Add your item photos:</string>
+    <string name="add_your_item_details">Add your item details:</string>
+    <string name="hint_item_name">Item name</string>
+    <string name="hint_item_price">Item price</string>
+    <string name="hint_item_description">Item description</string>
+    <string name="hint_item_category">Item category</string>
+    <string name="helper_item_name">Keep your item name short.</string>
+    <string name="helper_item_description">Brief description for your item.</string>
+    <string name="helper_item_price">Price in Kenya Shillings.</string>
+    <string name="selected_category">Selected category</string>
+    <string name="post_to">Post to:</string>
+    <string name="loading_item_categories">Loading item categories…</string>
+    <string name="helper_category">Select item category:</string>
+    <string name="continue_">Continue</string>
+    <string name="preview">Preview</string>
+    <string name="title_activity_camera">Take a photo</string>
+    <string name="add_item_photo">Add item photo</string>
+    <string name="title_activity_item">Item</string>
+    <string name="error_photo">First photo is required!</string>
+    <string name="ok">OK</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="action_share">Share</string>
+    <string name="make_an_offer">Make an offer</string>
+    <string name="buy_at">Buy @ KSH %1$.2f</string>
+    <string name="description">Description</string>
+    <string name="product_specification">Product Specification</string>
+    <string name="category">Category</string>
+    <string name="condition">Condition</string>
+    <string name="brand">Brand</string>
+    <string name="size">Size</string>
+    <string name="not_applicable">Not applicable!</string>
+    <string name="no_chips">No chips!</string>
+    <string name="select_item_type">Select item type</string>
+    <string name="change">Change</string>
+    <string name="add_brand">Add brand</string>
+    <string name="sizes">Sizes</string>
+    <string name="next">Next</string>
+    <string name="no_brand_added">No brand added</string>
+    <string name="title_activity_editor">Description</string>
+
+</resources>

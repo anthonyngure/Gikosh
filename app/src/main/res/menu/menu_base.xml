@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ke.co.toshngure.gikosh.activity.MainActivity">
+
+    <item
+        android:id="@+id/action_cart"
+        android:title="@string/action_cart"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        app:showAsAction="always"
+        android:orderInCategory="100"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
+        android:id="@+id/action_sign_out"
+        android:title="@string/action_sign_out"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>

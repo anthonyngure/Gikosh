@@ -1,0 +1,79 @@
+<com.getbase.floatingactionbutton.FloatingActionsMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/floatingActionsMenu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_marginBottom="@dimen/fab_margin"
+    android:layout_marginEnd="@dimen/fab_margin"
+    android:layout_marginRight="@dimen/fab_margin"
+    android:layout_toLeftOf="@+id/multiple_actions_down"
+    android:layout_toStartOf="@+id/multiple_actions_down"
+    fab:fab_addButtonColorNormal="?attr/colorAccent"
+    fab:fab_addButtonColorPressed="?attr/colorPrimaryDark"
+    fab:fab_addButtonPlusIconColor="?attr/colorPrimary"
+    fab:fab_addButtonSize="normal"
+    fab:fab_addButtonStrokeVisible="false"
+    fab:fab_expandDirection="up"
+    fab:fab_labelStyle="@style/MenuLabelStyle"
+    fab:fab_labelsPosition="left">
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/sellFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/black"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_icon="@drawable/ic_sell"
+        fab:fab_size="mini"
+        fab:fab_title="Sell on Gikosh" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/huntFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/black"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_icon="@drawable/ic_hunt"
+        fab:fab_size="mini"
+        fab:fab_title="Hunt on Gikosh" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/celebsFashionFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/black"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_icon="@drawable/ic_fashion"
+        fab:fab_size="mini"
+        fab:fab_title="Celebs Fashion" />
+
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/personalFashionFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/black"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_icon="@drawable/ic_fashion"
+        fab:fab_size="mini"
+        fab:fab_title="Personal Fashion" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/designersFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/black"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_icon="@drawable/ic_fashion"
+        fab:fab_size="mini"
+        fab:fab_title="Designers Fashion" />
+
+
+</com.getbase.floatingactionbutton.FloatingActionsMenu>

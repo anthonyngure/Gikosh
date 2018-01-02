@@ -1,0 +1,117 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ke.co.toshngure.gikosh.fragment.BlankFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_vertical_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/firstNameMET"
+                style="@style/METAuthField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint_first_name"
+                android:inputType="text|textCapWords|textNoSuggestions|textPersonName"
+                android:layout_marginEnd="@dimen/list_row_padding"
+                android:layout_marginRight="@dimen/list_row_padding"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/lastNameMET"
+                style="@style/METAuthField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text|textCapWords|textNoSuggestions|textPersonName"
+                android:hint="@string/hint_last_name"/>
+
+        </LinearLayout>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/phoneMET"
+            style="@style/METAuthField"
+            android:hint="@string/hint_phone"
+            app:met_helperText="@string/helper_phone"
+            app:met_singleLineEllipsis="false"
+            android:maxLines="1"
+            android:inputType="phone" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/emailMET"
+            style="@style/METAuthField"
+            android:hint="@string/hint_email"
+            app:met_helperText="@string/helper_email"
+            app:met_singleLineEllipsis="false"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/passwordMET"
+                style="@style/METAuthField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint_password"
+                android:inputType="textNoSuggestions|textVisiblePassword"
+                android:layout_marginEnd="@dimen/list_row_padding"
+                android:layout_marginRight="@dimen/list_row_padding"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/confirmPasswordMET"
+                style="@style/METAuthField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="textNoSuggestions|textVisiblePassword"
+                android:imeOptions="actionDone"
+                android:imeActionLabel="@string/sign_up"
+                android:hint="@string/hint_confirm_password"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/signUpBtn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:text="@string/sign_up"
+            android:layout_marginBottom="@dimen/list_row_padding"/>
+
+        <TextView
+            android:id="@+id/privacyPolicyTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy_warning"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:layout_marginBottom="@dimen/list_row_padding"/>
+
+        <include layout="@layout/horizontal_separator"/>
+
+        <Button
+            android:id="@+id/signInBtn"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:text="@string/have_an_account_sign_in"
+            android:layout_marginBottom="@dimen/list_row_padding"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

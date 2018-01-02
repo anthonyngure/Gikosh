@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017. Laysan Incorporation
+  ~ Website http://laysan.co.ke
+  ~ Tel +254723203475/+254706356815
+  -->
+
+<resources>
+
+    <string-array name="specification_conditions">
+        <item>New with tag</item>
+        <item>New</item>
+        <item>Like new</item>
+        <item>Minor wearing</item>
+        <item>Major wearing</item>
+    </string-array>
+
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="dummy_chips">
+        <item>Chip 1</item>
+        <item>Chip Hello Word</item>
+        <item>Chip 3</item>
+        <item>Chip 4</item>
+        <item>Chip 5</item>
+        <item>Chip 6</item>
+    </string-array>
+    <string-array name="counties">
+        <item>Mombasa County</item>
+        <item>Kwale County</item>
+        <item>Kilifi County</item>
+        <item>Tana River County</item>
+        <item>Lamu County</item>
+        <item>Taita Taveta County</item>
+        <item>Garrisa County</item>
+        <item>Wajir County</item>
+        <item>Mandera County</item>
+        <item>Marsabit County</item>
+        <item>Isiolo County</item>
+        <item>Meru County</item>
+        <item>Tharaka-Nithi County</item>
+        <item>Embu County</item>
+        <item>Kitui County</item>
+        <item>Machakos County</item>
+        <item>Makueni County</item>
+        <item>Nyandarua County</item>
+        <item>Nyeri County</item>
+        <item>Kirinyaga County</item>
+        <item>Murang\'a County</item>
+        <item>Kiambu County</item>
+        <item>Turkana County</item>
+        <item>West Pokot County</item>
+        <item>Samburu County</item>
+        <item>Trans-Nzoia County</item>
+        <item>Uasin Gishu County</item>
+        <item>Elgeyo Marakwet County</item>
+        <item>Nandi County</item>
+        <item>Baringo County</item>
+        <item>Laikipia County</item>
+        <item>Nakuru County</item>
+        <item>Narok County</item>
+        <item>Kajiado County</item>
+        <item>Kericho County</item>
+        <item>Bomet County</item>
+        <item>Kakamega County</item>
+        <item>Vihiga County</item>
+        <item>Bungoma County</item>
+        <item>Busia County</item>
+        <item>Siaya County</item>
+        <item>Kisumu County</item>
+        <item>Homa Bay County</item>
+        <item>Migori County</item>
+        <item>Kisii County</item>
+        <item>Nyamira County</item>
+        <item>Nairobi County</item>
+    </string-array>
+</resources>

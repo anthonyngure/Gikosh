@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.SplashActivity">
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carouselView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:fillColor="?attr/colorAccent"
+        app:pageColor="@android:color/transparent"
+        app:radius="8dp"
+        app:autoPlay="true"
+        app:indicatorGravity="center"
+        app:slideInterval="3000"
+        app:strokeColor="@android:color/white"
+        app:strokeWidth="2dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_gravity="bottom|center_horizontal">
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/signUpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:fb_radius="2dp"
+            app:fb_iconPosition="left"
+            app:fb_fontIconSize="20sp"
+            app:fb_iconPaddingRight="10dp"
+            app:fb_textSize="16sp"
+            app:fb_text="@string/sign_up_with_phone"
+            app:fb_fontIconResource="&#xf095;" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/orTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:padding="@dimen/list_row_padding"
+                android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@id/orTV"
+                android:layout_toStartOf="@id/orTV"
+                android:layout_centerVertical="true"
+                android:background="@android:color/white"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@id/orTV"
+                android:layout_toEndOf="@id/orTV"
+                android:layout_centerVertical="true"
+                android:background="@android:color/white"/>
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/logoutButton"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/list_row_padding"
+                android:layout_marginStart="@dimen/list_row_padding"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:fb_radius="0dp"
+                app:fb_iconPosition="left"
+                app:fb_fontIconSize="20sp"
+                app:fb_iconPaddingRight="10dp"
+                app:fb_textSize="16sp"
+                app:fb_text=""
+                app:fb_textColor="#ffffff"
+                app:fb_defaultColor="#39579B"
+                app:fb_focusColor="#6183d2"
+                app:fb_fontIconResource="&#xf08b;" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_toLeftOf="@id/logoutButton"
+                android:layout_toStartOf="@id/logoutButton"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_height="45dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:fb_radius="2dp"
+                app:fb_iconPosition="left"
+                app:fb_fontIconSize="20sp"
+                app:fb_iconPaddingRight="10dp"
+                app:fb_textSize="16sp"
+                app:fb_text="@string/sign_in_with_facebook"
+                app:fb_textColor="@android:color/white"
+                app:fb_defaultColor="@color/facebook"
+                app:fb_focusColor="@color/facebook_focused"
+                app:fb_fontIconResource="&#xf230;" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

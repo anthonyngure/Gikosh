@@ -1,0 +1,19 @@
+{
+  "picture": {
+    "data": {
+      "url": "https:\/\/scontent.xx.fbcdn.net\/v\/t1.0-1\/p50x50\/24296415_898210133673062_1105383927293161204_n.jpg?oh=7893265cfe503789cc3a23294ebf4d0c&oe=5AC7C904",
+      "is_silhouette": false,
+      "width": 50,
+      "height": 50
+    }
+  },
+  "id": "910837145743694",
+  "first_name": "Anthony",
+  "email": "anthonyngure25@yahoo.com",
+  "name": "Anthony Ngure",
+  "last_name": "Ngure",
+  "gender": "male",
+  "age_range": {
+    "min": 21
+  }
+}

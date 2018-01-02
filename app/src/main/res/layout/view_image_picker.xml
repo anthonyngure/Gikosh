@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ke.co.toshngure.basecode.view.SquaredFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="0dp"
+        app:cardPreventCornerOverlap="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/photoFL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/photoIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_check_circle_black_24dp"
+                    android:tint="@android:color/holo_green_dark"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="@dimen/list_row_padding"/>
+
+                <ImageView
+                    android:id="@+id/deleteIV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_delete_black_24dp"
+                    android:tint="@android:color/holo_red_dark"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/list_row_padding"
+                    android:background="?attr/selectableItemBackground"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/loaderFL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <include layout="@layout/view_load_fresh"/>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/addPhotoLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_a_photo_black_24dp"
+                    android:layout_marginBottom="@dimen/list_row_padding"/>
+
+                <TextView
+                    android:id="@+id/textTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/add_a_photo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </android.support.v7.widget.CardView>
+
+</ke.co.toshngure.basecode.view.SquaredFrameLayout>
