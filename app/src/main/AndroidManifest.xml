@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="ke.co.toshngure.gikosh">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -129,6 +128,15 @@
         <activity
             android:name=".activity.EditorActivity"
             android:label="@string/title_activity_editor"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ke.co.toshngure.gikosh.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.NetworkAutocompleteTextActivity"
+            android:label="@string/title_activity_network_autocomplete_text"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

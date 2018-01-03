@@ -11,12 +11,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.adroitandroid.chipcloud.ChipCloud;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ke.co.toshngure.gikosh.R;
+import ke.co.toshngure.gikosh.view.chipcloud.ChipCloud;
 
 /**
  * Created by Anthony Ngure on 01/01/2018.
@@ -77,7 +76,10 @@ public class SpecificationView extends FrameLayout {
         nameTV.setText(name);
     }
 
-    public void addChips(@NonNull String... chips) {
+    public void addChips(String... chips) {
+        if (chips == null) {
+            return;
+        }
         chipCloud.removeAllViews();
         chipCloud.addChips(chips);
         noChipsTV.setVisibility(chips.length > 0 ? GONE : VISIBLE);
@@ -93,12 +95,12 @@ public class SpecificationView extends FrameLayout {
         this.actionBtn.setVisibility(VISIBLE);
     }
 
-    public interface ActionListener{
-        void onClickActionBtn();
-    }
-
     @OnClick(R.id.actionBtn)
     public void onViewClicked() {
         this.actionListener.onClickActionBtn();
+    }
+
+    public interface ActionListener {
+        void onClickActionBtn();
     }
 }

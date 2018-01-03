@@ -163,7 +163,7 @@
     <string name="make_an_offer">Make an offer</string>
     <string name="buy_at">Buy @ KSH %1$.2f</string>
     <string name="description">Description</string>
-    <string name="product_specification">Product Specification</string>
+    <string name="item_specification">Item Specification</string>
     <string name="category">Category</string>
     <string name="condition">Condition</string>
     <string name="brand">Brand</string>
@@ -178,5 +178,9 @@
     <string name="no_brand_added">No brand added</string>
     <string name="title_activity_editor">Description</string>
     <string name="bullet">•</string>
+    <string name="colors">Colors</string>
+    <string name="add_color">Add color</string>
+    <string name="no_color_added">No color added</string>
+    <string name="title_activity_network_autocomplete_text">Network autocomplete text</string>
 
 </resources>

@@ -110,18 +110,40 @@
                     <TextView
                         style="@style/Heading"
                         android:layout_marginBottom="0dp"
-                        android:text="@string/description" />
+                        android:layout_marginTop="@dimen/list_row_padding"
+                        android:text="@string/hint_item_description" />
 
-
-                    <com.github.irshulx.Editor
-                        android:id="@+id/descriptionRenderer"
+                    <LinearLayout
+                        android:id="@+id/descriptionLL"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/list_row_padding"
-                        android:minHeight="?attr/actionBarSize"
-                        android:padding="@dimen/list_row_padding"
-                        app:placeholder="@string/helper_item_description"
-                        app:render_type="Renderer" />
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:background="?attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/list_row_padding"
+                        android:paddingRight="@dimen/list_row_padding"
+                        android:paddingTop="@dimen/list_row_padding">
+
+                        <com.github.irshulx.Editor
+                            android:id="@+id/descriptionRenderer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="48dp"
+                            app:placeholder="@string/helper_item_description"
+                            app:render_type="Renderer" />
+
+                        <TextView
+                            android:id="@+id/descriptionHelperTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/list_row_padding"
+                            android:text="@string/helper_item_description"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+                        <include layout="@layout/horizontal_separator" />
+
+                    </LinearLayout>
+
 
                     <include layout="@layout/layout_specifications"/>
 

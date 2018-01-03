@@ -35,16 +35,17 @@ public class EditorActivity extends BaseActivity {
         setContentView(R.layout.activity_editor);
         ButterKnife.bind(this);
 
+        textEditor.setDividerLayout(R.layout.editor_divider);
+        textEditor.setListItemLayout(R.layout.editor_list_item);
+        //textEditor.setLineSpacing(2);
+        textEditor.render();
+
         if (getIntent().getExtras() != null) {
             String text = getIntent().getExtras().getString(EXTRA_TEXT);
             if (text != null) {
                 textEditor.render(text);
             }
         }
-
-        textEditor.setDividerLayout(R.layout.editor_divider);
-        textEditor.setListItemLayout(R.layout.editor_list_item);
-        textEditor.render();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

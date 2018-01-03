@@ -21,6 +21,11 @@ public class TestActivity extends BaseActivity {
             "https://lorempixel.com/400/400/fashion/?8"
     };
 
+    public static void start(Context context) {
+        Intent starter = new Intent(context, TestActivity.class);
+        context.startActivity(starter);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,16 +54,11 @@ public class TestActivity extends BaseActivity {
             imageNI.loadImageFromNetwork(photos[position]);
             return imageNI;
         });
-        SpecificationView sizeSV = findViewById(R.id.sizeSV);
+        SpecificationView sizeSV = findViewById(R.id.sizesSV);
         sizeSV.addChips("XS", "S", "M", "L", "XL", "XXL");
         sizeSV.getChipCloud().setSelectedChip(3);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    public static void start(Context context) {
-        Intent starter = new Intent(context, TestActivity.class);
-        context.startActivity(starter);
     }
 
     @Override

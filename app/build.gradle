@@ -4,6 +4,7 @@ apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 26
     defaultConfig {
+        multiDexEnabled true
         applicationId "ke.co.toshngure.gikosh"
         minSdkVersion 16
         targetSdkVersion 26
@@ -41,6 +42,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:multidex:1.0.2'
 
     implementation 'com.google.android.gms:play-services-gcm:11.8.0'
 
@@ -65,9 +67,9 @@ dependencies {
     implementation 'com.synnapps:carouselview:0.1.4'
     implementation 'com.github.medyo:fancybuttons:1.8.4'
     implementation 'com.getbase:floatingactionbutton:1.10.1'
-    implementation 'com.github.adroitandroid:ChipCloud:2.2.1'
     implementation 'com.google.android:flexbox:0.3.1'
     implementation 'com.github.irshulx:laser-native-editor:2.1.0'
+    implementation 'com.mobisys.android:autocompleteview:1.2'
 
 
     testImplementation 'junit:junit:4.12'
@@ -75,14 +77,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
 
-configurations.all {
-    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-        def requested = details.requested
-        if (requested.group == 'com.android.support') {
-            if (!requested.name.startsWith("multidex") || !requested.name.startsWith("constraint")) {
-                details.useVersion '26+'
-            }
-        }
-    }
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
+

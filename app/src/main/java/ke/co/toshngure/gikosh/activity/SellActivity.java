@@ -5,10 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
-import com.adroitandroid.chipcloud.ChipCloud;
-import com.adroitandroid.chipcloud.ChipListener;
 import com.github.irshulx.Editor;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -24,6 +25,8 @@ import ke.co.toshngure.gikosh.utils.PrefUtils;
 import ke.co.toshngure.gikosh.utils.Utils;
 import ke.co.toshngure.gikosh.view.ImagePicker;
 import ke.co.toshngure.gikosh.view.SpecificationView;
+import ke.co.toshngure.gikosh.view.chipcloud.ChipCloud;
+import ke.co.toshngure.gikosh.view.chipcloud.ChipListener;
 
 public class SellActivity extends BaseActivity implements SelectCategoryFragment.Listener {
 
@@ -34,6 +37,8 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
     private static final int IMAGE_FOUR_REQUEST = 400;
     private static final int DESCRIPTION_REQUEST = 500;
 
+    @BindView(R.id.descriptionHelperTV)
+    TextView descriptionHelperTV;
     @BindView(R.id.nameMET)
     MaterialEditText nameMET;
     @BindView(R.id.priceMET)
@@ -48,7 +53,10 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
     ImagePicker imagePicker3;
     @BindView(R.id.imagePicker4)
     ImagePicker imagePicker4;
-    @BindView(R.id.sizeSV)
+
+    @BindView(R.id.colorsSV)
+    SpecificationView colorsSV;
+    @BindView(R.id.sizesSV)
     SpecificationView sizeSV;
     @BindView(R.id.categorySV)
     SpecificationView categorySV;
@@ -58,6 +66,7 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
     SpecificationView conditionSV;
     private Category mCategory;
     private SelectCategoryFragment mSelectCategoryFragment;
+    private String mCurrentDescriptionHtmlString;
 
     public static void start(Context context, Category category) {
         Intent starter = new Intent(context, SellActivity.class);
@@ -88,6 +97,15 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
         imagePicker2.setActivity(this, IMAGE_TWO_REQUEST);
         imagePicker3.setActivity(this, IMAGE_THREE_REQUEST);
         imagePicker4.setActivity(this, IMAGE_FOUR_REQUEST);
+
+        /*Colors spec*/
+        colorsSV.setActionListener(R.string.add_color, () -> NetworkAutocompleteTextActivity.start(this));
+        colorsSV.getChipCloud().setMode(ChipCloud.Mode.NONE);
+        colorsSV.getChipCloud().setUnselectedColor(BaseUtils.getColorAttr(this,
+                R.attr.colorAccent));
+        colorsSV.getChipCloud().setUnselectedFontColor(ContextCompat.getColor(this,
+                android.R.color.white));
+
 
         /*Size spec*/
         sizeSV.addChips(Utils.arrayFromHashSeparatedString(mCategory.getSizeOptions()));
@@ -129,9 +147,12 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
 
 
         /*Brand spec*/
-        brandSV.setActionListener(R.string.add_brand, () -> {
-
-        });
+        brandSV.setActionListener(R.string.add_brand, () -> NetworkAutocompleteTextActivity.start(this));
+        brandSV.getChipCloud().setMode(ChipCloud.Mode.NONE);
+        brandSV.getChipCloud().setUnselectedColor(BaseUtils.getColorAttr(this,
+                R.attr.colorAccent));
+        brandSV.getChipCloud().setUnselectedFontColor(ContextCompat.getColor(this,
+                android.R.color.white));
 
         /*Condition Spec*/
         conditionSV.addChips(getResources().getStringArray(R.array.specification_conditions));
@@ -139,20 +160,23 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    @OnClick(R.id.descriptionRenderer)
+    @OnClick(R.id.descriptionLL)
     public void writeDescription(View view) {
-        EditorActivity.start(this, DESCRIPTION_REQUEST, descriptionRenderer.getContentAsHTML());
+        EditorActivity.start(this, DESCRIPTION_REQUEST, mCurrentDescriptionHtmlString);
     }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == DESCRIPTION_REQUEST && resultCode == Activity.RESULT_OK){
-            if (data.getExtras() != null){
-                String desc = data.getExtras().getString(EditorActivity.EXTRA_TEXT);
-                if (desc != null){
-                    descriptionRenderer.render(desc.trim());
+        if (requestCode == DESCRIPTION_REQUEST && resultCode == Activity.RESULT_OK) {
+            if (data.getExtras() != null) {
+                mCurrentDescriptionHtmlString = data.getExtras().getString(EditorActivity.EXTRA_TEXT);
+                if (!TextUtils.isEmpty(mCurrentDescriptionHtmlString)) {
+                    descriptionRenderer.render(mCurrentDescriptionHtmlString.trim());
+                    descriptionHelperTV.setVisibility(View.GONE);
+                } else {
+                    descriptionHelperTV.setVisibility(View.VISIBLE);
                 }
             }
         } else {
