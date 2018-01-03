@@ -181,6 +181,6 @@
     <string name="colors">Colors</string>
     <string name="add_color">Add color</string>
     <string name="no_color_added">No color added</string>
-    <string name="title_activity_network_autocomplete_text">Network autocomplete text</string>
+    <string name="title_activity_autocomplete_text">Autocomplete text</string>
 
 </resources>

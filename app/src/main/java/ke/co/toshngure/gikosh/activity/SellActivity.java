@@ -99,7 +99,7 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
         imagePicker4.setActivity(this, IMAGE_FOUR_REQUEST);
 
         /*Colors spec*/
-        colorsSV.setActionListener(R.string.add_color, () -> NetworkAutocompleteTextActivity.start(this));
+        colorsSV.setActionListener(R.string.add_color, () -> AutocompleteTextActivity.start(this));
         colorsSV.getChipCloud().setMode(ChipCloud.Mode.NONE);
         colorsSV.getChipCloud().setUnselectedColor(BaseUtils.getColorAttr(this,
                 R.attr.colorAccent));
@@ -147,7 +147,7 @@ public class SellActivity extends BaseActivity implements SelectCategoryFragment
 
 
         /*Brand spec*/
-        brandSV.setActionListener(R.string.add_brand, () -> NetworkAutocompleteTextActivity.start(this));
+        brandSV.setActionListener(R.string.add_brand, () -> AutocompleteTextActivity.start(this));
         brandSV.getChipCloud().setMode(ChipCloud.Mode.NONE);
         brandSV.getChipCloud().setUnselectedColor(BaseUtils.getColorAttr(this,
                 R.attr.colorAccent));

@@ -16,6 +16,8 @@ public class BackEnd {
         public static final String PHONE_SIGN_IN = "/auth/phoneSignIn";
         public static final String PHONE_SIGN_UP = "/auth/phoneSignUp";
         public static final String FACEBOOK_SIGN_IN = "/auth/facebookSignIn";
+        public static final String SEARCH_COLORS = "/search/colors";
+        public static final String SEARCH_BRANDS = "/search/brands";
     }
 
     public static final class Params {

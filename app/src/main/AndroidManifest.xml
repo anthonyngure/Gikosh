@@ -135,8 +135,8 @@
                 android:value="ke.co.toshngure.gikosh.activity.MainActivity" />
         </activity>
         <activity
-            android:name=".activity.NetworkAutocompleteTextActivity"
-            android:label="@string/title_activity_network_autocomplete_text"
+            android:name=".activity.AutocompleteTextActivity"
+            android:label="@string/title_activity_autocomplete_text"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

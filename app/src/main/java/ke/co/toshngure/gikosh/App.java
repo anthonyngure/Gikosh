@@ -6,8 +6,8 @@
 
 package ke.co.toshngure.gikosh;
 
+import android.app.Application;
 import android.os.Build;
-import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.birbit.android.jobqueue.JobManager;
@@ -22,7 +22,7 @@ import ke.co.toshngure.basecode.log.BeeLog;
 import ke.co.toshngure.gikosh.jobqueue.service.MyGcmJobService;
 import ke.co.toshngure.gikosh.jobqueue.service.MyJobService;
 
-public class App extends MultiDexApplication {
+public class App extends Application {
 
     private static final String TAG = App.class.getSimpleName();
 
