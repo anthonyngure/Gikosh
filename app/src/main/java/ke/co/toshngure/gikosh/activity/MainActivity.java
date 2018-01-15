@@ -11,17 +11,21 @@ import butterknife.OnClick;
 import ke.co.toshngure.gikosh.R;
 import ke.co.toshngure.gikosh.fragment.SelectCategoryFragment;
 import ke.co.toshngure.gikosh.model.Category;
+import ke.co.toshngure.gikosh.utils.DrawerManager;
 
 public class MainActivity extends BaseActivity implements SelectCategoryFragment.Listener {
 
     @BindView(R.id.floatingActionsMenu)
     FloatingActionsMenu floatingActionsMenu;
+    private DrawerManager mDrawerManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mDrawerManager = DrawerManager.init(this, getToolbar());
     }
 
     @Override
@@ -48,6 +52,8 @@ public class MainActivity extends BaseActivity implements SelectCategoryFragment
         //super.onBackPressed();
         if (floatingActionsMenu.isExpanded()){
             floatingActionsMenu.collapse();
+        } else if (mDrawerManager.getDrawer().isDrawerOpen()) {
+            mDrawerManager.getDrawer().closeDrawer();
         } else {
 
             this.finish();

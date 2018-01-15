@@ -8,7 +8,7 @@ import android.view.Menu;
 
 import com.synnapps.carouselview.CarouselView;
 
-import ke.co.toshngure.basecode.images.BaseNetworkImage;
+import ke.co.toshngure.basecode.images.NetworkImage;
 import ke.co.toshngure.gikosh.R;
 import ke.co.toshngure.gikosh.view.SpecificationView;
 
@@ -49,7 +49,7 @@ public class TestActivity extends BaseActivity {
         CarouselView carouselView = findViewById(R.id.carouselView);
         carouselView.setPageCount(photos.length);
         carouselView.setViewListener(position -> {
-            BaseNetworkImage imageNI = (BaseNetworkImage)
+            NetworkImage imageNI = (NetworkImage)
                     LayoutInflater.from(this).inflate(R.layout.content_item_carousel_item, null);
             imageNI.loadImageFromNetwork(photos[position]);
             return imageNI;

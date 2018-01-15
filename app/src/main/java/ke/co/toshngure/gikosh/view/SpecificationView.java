@@ -14,9 +14,8 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import ke.co.toshngure.chipcloud.ChipCloud;
 import ke.co.toshngure.gikosh.R;
-import ke.co.toshngure.gikosh.view.chipcloud.ChipCloud;
-
 /**
  * Created by Anthony Ngure on 01/01/2018.
  * Email : anthonyngure25@gmail.com.

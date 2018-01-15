@@ -115,7 +115,7 @@ public class BaseActivity extends BaseAppActivity implements ConnectionListener 
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 startNewTaskActivity(new Intent(getActivity(), SplashActivity.class));
-                exitActivity();
+                BaseActivity.this.finish();
             }
         }.execute();
     }
@@ -246,7 +246,7 @@ public class BaseActivity extends BaseAppActivity implements ConnectionListener 
                 TestActivity.start(this);
                 return true;
             case R.id.action_cart:
-                AutocompleteTextActivity.start(this);
+                //AutocompleteTextActivity.start(this);
                 return true;
             case R.id.action_sign_out:
                 signOut();

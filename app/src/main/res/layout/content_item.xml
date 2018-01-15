@@ -17,17 +17,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
+            <TextView
+                android:id="@+id/nameTV"
+                style="@style/BaseApp.Heading" />
 
             <TextView
-                style="@style/Heading"
-                android:text="@string/description"/>
+                android:id="@+id/priceTV"
+                style="@style/BaseApp.Heading" />
 
             <TextView
-                android:id="@+id/descriptionTV"
-                style="@style/Body"
+                style="@style/BaseApp.Heading"
+                android:text="@string/description" />
+
+            <ke.co.toshngure.editor.Editor
+                android:id="@+id/descriptionRenderer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_row_padding"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+                app:editorEditable="false" />
 
 
             <include layout="@layout/layout_specifications"/>

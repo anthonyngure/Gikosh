@@ -12,7 +12,7 @@
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#CCCCCC</color>
     <color name="windowBackground">#F5F5F5</color>
-    <color name="colorAccent">#000000</color>
+    <color name="colorAccent">#d77b5d</color>
 
     <color name="blue_200">#FF90CAF9</color>
     <color name="blue_500">#FF2196F3</color>

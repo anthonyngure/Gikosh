@@ -11,4 +11,12 @@
 
     <include layout="@layout/content_sell" />
 
+    <Button
+        android:id="@+id/previewBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:text="@string/preview_to_post" />
+
 </android.support.design.widget.CoordinatorLayout>

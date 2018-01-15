@@ -36,7 +36,7 @@
 
             <ImageView
                 android:id="@+id/iconIV"
-                style="@style/Image"
+                style="@style/BaseApp.Image"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_straighten_black_24dp" />
 
@@ -70,7 +70,7 @@
             android:text="@string/not_applicable"
             android:textColor="@android:color/holo_red_dark"/>
 
-        <ke.co.toshngure.gikosh.view.chipcloud.ChipCloud
+        <ke.co.toshngure.chipcloud.ChipCloud
             android:id="@+id/chipCloud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

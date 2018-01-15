@@ -5,7 +5,7 @@
     android:padding="@dimen/activity_vertical_margin">
 
     <TextView
-        style="@style/Heading"
+        style="@style/BaseApp.Heading"
         android:text="@string/select_item_type"/>
 
     <RelativeLayout

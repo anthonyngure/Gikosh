@@ -126,17 +126,8 @@
                 android:value="ke.co.toshngure.gikosh.activity.MainActivity" />
         </activity>
         <activity
-            android:name=".activity.EditorActivity"
+            android:name="ke.co.toshngure.editor.EditorActivity"
             android:label="@string/title_activity_editor"
-            android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ke.co.toshngure.gikosh.activity.MainActivity" />
-        </activity>
-        <activity
-            android:name=".activity.AutocompleteTextActivity"
-            android:label="@string/title_activity_autocomplete_text"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

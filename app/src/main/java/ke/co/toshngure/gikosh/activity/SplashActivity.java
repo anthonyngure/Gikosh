@@ -3,6 +3,7 @@ package ke.co.toshngure.gikosh.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -32,7 +33,6 @@ import ke.co.toshngure.gikosh.model.FacebookUser;
 import ke.co.toshngure.gikosh.network.BackEnd;
 import ke.co.toshngure.gikosh.network.Client;
 import ke.co.toshngure.gikosh.utils.PrefUtils;
-import mehdi.sakout.fancybuttons.FancyButton;
 
 
 public class SplashActivity extends BaseActivity implements
@@ -41,18 +41,13 @@ public class SplashActivity extends BaseActivity implements
     private static final String TAG = SplashActivity.class.getSimpleName();
 
     private static final String[] readPermissions = new String[]{"email", "public_profile"};
-
-    private CallbackManager mCallbackManager;
-
     LoginManager mLoginManager;
     AccessTokenTracker mAccessTokenTracker;
-
     @BindView(R.id.loginButton)
-    FancyButton mLoginButton;
-
+    Button mLoginButton;
     @BindView(R.id.logoutButton)
-    FancyButton mLogoutButton;
-
+    Button mLogoutButton;
+    private CallbackManager mCallbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

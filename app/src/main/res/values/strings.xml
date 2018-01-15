@@ -152,7 +152,7 @@
     <string name="loading_item_categories">Loading item categories…</string>
     <string name="helper_category">Select item category:</string>
     <string name="continue_">Continue</string>
-    <string name="preview">Preview</string>
+    <string name="preview_to_post">Preview to Post</string>
     <string name="title_activity_camera">Take a photo</string>
     <string name="add_item_photo">Add item photo</string>
     <string name="title_activity_item">Item</string>
@@ -181,6 +181,6 @@
     <string name="colors">Colors</string>
     <string name="add_color">Add color</string>
     <string name="no_color_added">No color added</string>
-    <string name="title_activity_autocomplete_text">Autocomplete text</string>
+    <string name="error_fields_required">You must fill all the fields!</string>
 
 </resources>
